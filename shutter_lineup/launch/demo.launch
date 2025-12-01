@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.conditions import IfCondition
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch_ros.actions import Node, SetParameter
+from launch_ros.substitutions import FindPackageShare
+import os
+
+def generate_launch_description():
+    # Declare launch arguments
+    <!-- look_forward_arg = DeclareLaunchArgument(
+        'look_forward',
+        default_value='True',
+        description='Make shutter look forward?'
+    )
+    
+    target_x_plane_arg = DeclareLaunchArgument(
+        'target_x_plane',
+        default_value='1.5',
+        description='X plane position for target'
+    )
+    
+    target_radius_arg = DeclareLaunchArgument(
+        'target_radius',
+        default_value='0.05',
+        description='Radius of the target'
+    )
+    
+    publish_rate_arg = DeclareLaunchArgument(
+        'publish_rate',
+        default_value='30',
+        description='Publishing rate for target'
+    ) -->
+
+    # Include the shutter launch file
+    shutter_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('shutter_bringup'),
+                'launch',
+                'shutter_with_face.launch.py'
+            ])
+        ]),
+        launch_arguments={'simulation': 'false'}.items()
+    )
+
+    # Joint state publisher node
+    shutter_lineup_node = Node(
+        package='shutter_lineup',
+        executable='shutter_lineup_node.py',
+        name='shutter_lineup_node',
+        output='screen'
+    )
+
+    # Generate target node
+    virtual_camera_node = Node(
+        package='shutter_lineup',
+        executable='virtual_camera.py',
+        name='virtual_camera',
+        output='screen',
+    )
+    
+    # RViz node
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz',
+        arguments=['-d', PathJoinSubstitution([
+            FindPackageShare('shutter_lineup'),
+            'config',
+            'rviz_target.cfg.rviz'
+        ])]
+    )
+
+
+    return LaunchDescription([
+        shutter_lineup_node,
+        virtual_camera_node,
+        shutter_launch,
+        rviz_node,
+    ])

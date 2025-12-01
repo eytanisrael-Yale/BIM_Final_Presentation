@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 import numpy as np
-from std_msgs.msg import Float64MultiArray
+from std_msgs.msg import Float64MultiArray, Int16
 from cv_bridge import CvBridge
 import cv2
 
@@ -22,8 +22,11 @@ class VirtualCameraNode(Node):
         self.K[2, 2] = 1
 
         self.recent_image = None
+        self.runBound = False
 
         self.create_subscription(Float64MultiArray, 'kinect_bounding_box', self.bound_box_callback, 10)
+        self.create_subscription(Int16, 'control', self.control_cb, 10)
+
         self.bridge = CvBridge()
         self.image_sub = self.create_subscription(
             Image, "/rgb/image_raw", self.image_cb, 10
@@ -36,10 +39,22 @@ class VirtualCameraNode(Node):
         self.recent_image = image
         self.get_logger().info(f"Image recieved")
 
+    def control_cb(self, msg: Int16):
+        if msg.data == 2:
+            self.runBound = True
+        self.get_logger().info(f"Self.runBound = {self.runBound}")
+
+
 
         
 
     def bound_box_callback(self, bound_msg):
+        if self.runBound == False:
+            self.get_logger().info(f"Not running bound box code, return")
+            return
+        self.get_logger().info(f"Running bound box code")
+        self.runBound = False
+
         bound_list = bound_msg.data
         target_idx, x_min, x_max, y_min, y_max, depth = bound_list[0], bound_list[1], bound_list[2], bound_list[3], bound_list[4], bound_list[5]
 

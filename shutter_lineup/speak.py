@@ -18,7 +18,7 @@ You are helping a social robot address a specific person within a group by sayin
 that starts with “Hey you, …” so the person instantly knows it's them, and no other person is confused.
 
 General Rules (for D1–D3):
-- Each output MUST begin with exactly: "Hey".
+- Each output MUST begin with exactly: "Hey" and guide them where to go.
 - Use only what is visible. No speculation (no age/identity/ethnicity/gender).
 - Must be maximally clear and succinct. CANNOT REFER TO MORE THAN ONE PERSON
 - Output EXACTLY one sentence and nothing else.
@@ -27,7 +27,7 @@ General Rules (for D1–D3):
 
 PROMPT_D2 = BASE_CONTEXT + r"""
 Your task for D2 (one sentence):
-Write a concise natural “Hey …” that uniquely identifies the bounded person using **clothing/accessories AND/OR a relative location cue **. Don't be more descriptive than necessary.
+Write a concise natural “Hey …” that uniquely identifies the bounded person using **clothing/accessories AND/OR a relative location cue ** and tells them to move to the desired location. Don't be more descriptive than necessary.
 """
 
 
@@ -56,7 +56,7 @@ def polly_autoplay(text):
 
 
 
-def main(image_path: str):
+def call_gemini(image_path: str, distance: str):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("Error: set GEMINI_API_KEY.")
@@ -71,7 +71,7 @@ def main(image_path: str):
 
     desc_model = genai.GenerativeModel(
         model_name=MODEL,
-        system_instruction="Work ONLY from the image. Output a single sentence starting with 'Hey you, '."
+        system_instruction=f"Work ONLY from the image. Output a single sentence starting with 'Hey you, ' and get the user to move {distance} meters. Negative means they must move backward, and positive they must move forward. Be natural and say something like move forward/backward around a foot and a half"
     )
 
     try:
@@ -95,4 +95,4 @@ if __name__ == "__main__":
         print("Usage: main.py <image_path>")
         sys.exit(1)
 
-    main(sys.argv[1])
+    call_gemini(sys.argv[1])

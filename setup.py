@@ -11,7 +11,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'google-generativeai'],
     zip_safe=True,
     maintainer='eyi3',
     maintainer_email='eyi3@todo.todo',
@@ -21,7 +21,8 @@ setup(
     entry_points={
     'console_scripts': [
         'lineup_node = shutter_lineup.shutter_lineup_node:main',
-        'virtual_camera = shutter_lineup.virtual_camera:main'
+        'virtual_camera = shutter_lineup.virtual_camera:main',
+        'control = shutter_lineup.control:main'
     ],
 },
 )
