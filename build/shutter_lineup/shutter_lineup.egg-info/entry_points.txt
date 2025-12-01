@@ -1,0 +1,3 @@
+[console_scripts]
+lineup_node = shutter_lineup.shutter_lineup_node:main
+virtual_camera = shutter_lineup.virtual_camera:main

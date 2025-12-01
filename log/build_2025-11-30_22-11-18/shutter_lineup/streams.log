@@ -1,0 +1,21 @@
+[1.372s] Invoking command in '/home/eyi3/ros2_ws/src/shutter_lineup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/shutter_lineup build --build-base /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build install --record /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/install.log --single-version-externally-managed install_data
+[1.892s] running egg_info
+[1.949s] writing build/shutter_lineup/shutter_lineup.egg-info/PKG-INFO
+[1.950s] writing dependency_links to build/shutter_lineup/shutter_lineup.egg-info/dependency_links.txt
+[1.950s] writing entry points to build/shutter_lineup/shutter_lineup.egg-info/entry_points.txt
+[1.950s] writing requirements to build/shutter_lineup/shutter_lineup.egg-info/requires.txt
+[1.951s] writing top-level names to build/shutter_lineup/shutter_lineup.egg-info/top_level.txt
+[2.051s] reading manifest file 'build/shutter_lineup/shutter_lineup.egg-info/SOURCES.txt'
+[2.052s] writing manifest file 'build/shutter_lineup/shutter_lineup.egg-info/SOURCES.txt'
+[2.052s] running build
+[2.052s] running build_py
+[2.053s] running install
+[2.067s] running install_lib
+[2.117s] running install_data
+[2.117s] running install_egg_info
+[2.153s] removing '/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup-0.0.0-py3.12.egg-info' (and everything under it)
+[2.153s] Copying build/shutter_lineup/shutter_lineup.egg-info to /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup-0.0.0-py3.12.egg-info
+[2.154s] running install_scripts
+[2.388s] Installing lineup_node script to /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/shutter_lineup
+[2.389s] writing list of installed files to '/home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/install.log'
+[2.438s] Invoked command in '/home/eyi3/ros2_ws/src/shutter_lineup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/shutter_lineup build --build-base /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build install --record /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/install.log --single-version-externally-managed install_data

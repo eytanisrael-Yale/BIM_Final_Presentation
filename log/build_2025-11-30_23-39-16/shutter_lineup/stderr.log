@@ -1,0 +1,5 @@
+  File "/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup/virtual_camera.py", line 27
+    if 
+       ^
+SyntaxError: invalid syntax
+

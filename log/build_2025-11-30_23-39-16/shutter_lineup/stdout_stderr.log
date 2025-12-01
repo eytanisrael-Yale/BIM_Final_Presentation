@@ -1,0 +1,31 @@
+running egg_info
+writing build/shutter_lineup/shutter_lineup.egg-info/PKG-INFO
+writing dependency_links to build/shutter_lineup/shutter_lineup.egg-info/dependency_links.txt
+writing entry points to build/shutter_lineup/shutter_lineup.egg-info/entry_points.txt
+writing requirements to build/shutter_lineup/shutter_lineup.egg-info/requires.txt
+writing top-level names to build/shutter_lineup/shutter_lineup.egg-info/top_level.txt
+reading manifest file 'build/shutter_lineup/shutter_lineup.egg-info/SOURCES.txt'
+writing manifest file 'build/shutter_lineup/shutter_lineup.egg-info/SOURCES.txt'
+running build
+running build_py
+copying shutter_lineup/shutter_lineup_node.py -> /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build/lib/shutter_lineup
+copying shutter_lineup/virtual_camera.py -> /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build/lib/shutter_lineup
+running install
+running install_lib
+copying /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build/lib/shutter_lineup/shutter_lineup_node.py -> /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup
+copying /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build/lib/shutter_lineup/virtual_camera.py -> /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup
+byte-compiling /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup/shutter_lineup_node.py to shutter_lineup_node.cpython-312.pyc
+byte-compiling /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup/virtual_camera.py to virtual_camera.cpython-312.pyc
+  File "/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup/virtual_camera.py", line 27
+    if 
+       ^
+SyntaxError: invalid syntax
+
+running install_data
+running install_egg_info
+removing '/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup-0.0.0-py3.12.egg-info' (and everything under it)
+Copying build/shutter_lineup/shutter_lineup.egg-info to /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup-0.0.0-py3.12.egg-info
+running install_scripts
+Installing lineup_node script to /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/shutter_lineup
+Installing virtual_camera script to /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/shutter_lineup
+writing list of installed files to '/home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/install.log'

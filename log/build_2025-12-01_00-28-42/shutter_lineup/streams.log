@@ -1,0 +1,28 @@
+[0.944s] Invoking command in '/home/eyi3/ros2_ws/src/shutter_lineup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/shutter_lineup build --build-base /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build install --record /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/install.log --single-version-externally-managed install_data
+[1.254s] running egg_info
+[1.277s] writing build/shutter_lineup/shutter_lineup.egg-info/PKG-INFO
+[1.277s] writing dependency_links to build/shutter_lineup/shutter_lineup.egg-info/dependency_links.txt
+[1.277s] writing entry points to build/shutter_lineup/shutter_lineup.egg-info/entry_points.txt
+[1.277s] writing requirements to build/shutter_lineup/shutter_lineup.egg-info/requires.txt
+[1.277s] writing top-level names to build/shutter_lineup/shutter_lineup.egg-info/top_level.txt
+[1.329s] reading manifest file 'build/shutter_lineup/shutter_lineup.egg-info/SOURCES.txt'
+[1.330s] writing manifest file 'build/shutter_lineup/shutter_lineup.egg-info/SOURCES.txt'
+[1.330s] running build
+[1.331s] running build_py
+[1.331s] copying shutter_lineup/shutter_lineup_node.py -> /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build/lib/shutter_lineup
+[1.331s] copying shutter_lineup/virtual_camera.py -> /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build/lib/shutter_lineup
+[1.331s] running install
+[1.337s] running install_lib
+[1.360s] copying /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build/lib/shutter_lineup/shutter_lineup_node.py -> /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup
+[1.361s] copying /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build/lib/shutter_lineup/virtual_camera.py -> /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup
+[1.361s] byte-compiling /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup/shutter_lineup_node.py to shutter_lineup_node.cpython-312.pyc
+[1.362s] byte-compiling /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup/virtual_camera.py to virtual_camera.cpython-312.pyc
+[1.363s] running install_data
+[1.363s] running install_egg_info
+[1.387s] removing '/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup-0.0.0-py3.12.egg-info' (and everything under it)
+[1.387s] Copying build/shutter_lineup/shutter_lineup.egg-info to /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages/shutter_lineup-0.0.0-py3.12.egg-info
+[1.388s] running install_scripts
+[1.559s] Installing lineup_node script to /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/shutter_lineup
+[1.559s] Installing virtual_camera script to /home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/shutter_lineup
+[1.560s] writing list of installed files to '/home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/install.log'
+[1.582s] Invoked command in '/home/eyi3/ros2_ws/src/shutter_lineup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eyi3/ros2_ws/src/shutter_lineup/install/shutter_lineup/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/shutter_lineup build --build-base /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/build install --record /home/eyi3/ros2_ws/src/shutter_lineup/build/shutter_lineup/install.log --single-version-externally-managed install_data
