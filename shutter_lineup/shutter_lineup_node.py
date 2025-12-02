@@ -29,7 +29,7 @@ class LineupNode(Node):
         
 
     def body_tracking_cb(self, msg: MarkerArray):
-        self.get_logger().info(f"Running body_tracking_cb, self.switchTarget = {self.switchTarget}")
+        # self.get_logger().info(f"Running body_tracking_cb, self.switchTarget = {self.switchTarget}")
         markers = msg.markers
         if not markers:
             return
@@ -77,14 +77,20 @@ class LineupNode(Node):
         if self.switchTarget:
             self.target_idx = int(np.argmax(diffs))
             self.switchTarget = False
-        elif self.target_idx == -1:
+        elif self.target_idx == -1 or self.target_idx >= num_people:
             return
 
+        # offset = diffs[self.target_idx]
+        # max_offset = max(diffs)
         max_offset = diffs[self.target_idx]
 
         self.get_logger().info(
             f"curreny idx={self.target_idx}, depth = {person_depths[self.target_idx]}, offset={max_offset:.2f} m"
         )
+
+        # self.get_logger().info(
+        #     f"curreny idx={self.target_idx}, depth = {person_depths[self.target_idx]}, offset={offset:.2f} m"
+        # )
 
         if max_offset > FOOT_IN_METERS:
             direction = "forward" if person_depths[self.target_idx] > 1 else "back"

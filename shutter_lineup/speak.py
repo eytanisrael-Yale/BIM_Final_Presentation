@@ -7,6 +7,8 @@ import tempfile
 import google.generativeai as genai
 import boto3
 from playsound import playsound
+import rclpy
+import time
 
 MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
@@ -27,7 +29,7 @@ General Rules (for D1–D3):
 
 PROMPT_D2 = BASE_CONTEXT + r"""
 Your task for D2 (one sentence):
-Write a concise natural “Hey …” that uniquely identifies the bounded person using **clothing/accessories AND/OR a relative location cue ** and tells them to move to the desired location. Don't be more descriptive than necessary.
+Write a concise natural “Hey …” that uniquely identifies the bounded person using **clothing/accessories AND/OR a relative location cue **. Don't be more descriptive than necessary.
 """
 
 
@@ -56,7 +58,7 @@ def polly_autoplay(text):
 
 
 
-def call_gemini(image_path: str, distance: str):
+def call_gemini(image_path: str, distance: int):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("Error: set GEMINI_API_KEY.")
@@ -71,11 +73,12 @@ def call_gemini(image_path: str, distance: str):
 
     desc_model = genai.GenerativeModel(
         model_name=MODEL,
-        system_instruction=f"Work ONLY from the image. Output a single sentence starting with 'Hey you, ' and get the user to move {distance} meters. Negative means they must move backward, and positive they must move forward. Be natural and say something like move forward/backward around a foot and a half"
+        system_instruction=f"Work ONLY from the image. Output a single sentence starting with 'Hey you, '"
     )
 
     try:
-        d2 = generate_description(desc_model, file_ref, PROMPT_D2)
+        direction = "forward" if distance > 0 else "backward"
+        d2 = generate_description(desc_model, file_ref, PROMPT_D2) + f" move {abs(distance)} feet {direction}"
     except Exception as e:
         print("Error generating D2:", e)
         sys.exit(1)
@@ -85,6 +88,10 @@ def call_gemini(image_path: str, distance: str):
 
     try:
         polly_autoplay(d2)
+        print("Sleeping...")
+        time.sleep(3)
+        print("Finished sleeping")
+
     except Exception as e:
         print("Polly error:", e)
         sys.exit(1)
