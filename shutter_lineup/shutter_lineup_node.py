@@ -16,13 +16,14 @@ class LineupNode(Node):
             self.body_tracking_cb,
             10
         )
-        self.create_subscription(Int16, 'control', self.control_cb, 10)
+        # self.create_subscription(Int16, 'control', self.control_cb, 10)
         self.get_logger().info("LineupNode started, listening to /body_tracking_data")
         self.bounding_coords_publisher = self.create_publisher(Float64MultiArray, 'kinect_bounding_box', 10)
         self.switchTarget = False
         self.target_idx = -1
 
     def control_cb(self, msg: Int16):
+        self.get_logger().info(f"ENTERED CONTROL CB")
         if msg.data == 1:
             self.switchTarget = True
         self.get_logger().info(f"self.switchTarget = {self.switchTarget}")
@@ -74,11 +75,14 @@ class LineupNode(Node):
         # find most out-of-line person
         diffs = [abs(z - 1) for z in person_depths]
 
-        if self.switchTarget:
-            self.target_idx = int(np.argmax(diffs))
-            self.switchTarget = False
-        elif self.target_idx == -1 or self.target_idx >= num_people:
-            return
+        # if self.switchTarget:
+        #     self.target_idx = int(np.argmax(diffs))
+        #     self.switchTarget = False
+        # elif self.target_idx == -1 or self.target_idx >= num_people:
+        #     return
+        
+        # Always set target to furthest
+        self.target_idx = np.argmax(diffs)
 
         # offset = diffs[self.target_idx]
         # max_offset = max(diffs)

@@ -29,7 +29,7 @@ General Rules (for D1–D3):
 
 PROMPT_D2 = BASE_CONTEXT + r"""
 Your task for D2 (one sentence):
-Write a concise natural “Hey …” that uniquely identifies the bounded person using **clothing/accessories AND/OR a relative location cue **. Don't be more descriptive than necessary.
+Write a concise natural “Hey …” that uniquely identifies the bounded person using **clothing/accessories AND/OR a relative location cue **. Don't be more descriptive than necessary. Directions (ex. second from the left) MUST be from the people in the picture's (not photographer) point of view. I.E. LEFT IS RIGHT, AND RIGHT IS LEFT
 """
 
 
