@@ -17,3 +17,13 @@ a person when addressing them, such as their appearance and
 relative position in a group of people, our robot will be able to
 call out specific individuals in a larger group and personalize its
 interactions.
+
+HOW TO RUN THE CODE:
+
+In order to run the code, you must run several nodes, one after another. Please follow these directions in order:
+1) ros2 launch azure_kinect_ros_driver driver.launch.py body_tracking_enabled:=true
+2) ros2 launch shutter_bringup shutter_with_face.launch.py
+3) ros2 run lineup lineup_node
+4) ros2 run lineup virtual_camera
+Then, once these four are running, launch the following as many times as you want. Running it will make a full process run. If you want to run it again, simply click command/control C, and rerun the command
+5) ros2 run lineup control
