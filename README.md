@@ -32,7 +32,7 @@ one by one and give them instructions until it reaches its goal.
 
 ## Running the Code
 
-First, we recommend setting up a virtual environment in your ROS directory. Please refer to [this repo]([https://example.com](https://github.com/Yale-BIM/f25-assignments/blob/master/SETUP0_ROSWorkspace.md)) to set up your ROS repository. 
+First, we recommend setting up a virtual environment in your ROS directory. Please refer to [this repo]([https://example.com](https://github.com/Yale-BIM/f25-assignments/blob/master/SETUP0_ROSWorkspace.md) to set up your ROS repository. 
 
 Please also ensure you have installed and set up Shutter, the Robot Photographer. Instructions for setting up Shutter can be found in [this repo](https://gitlab.com/interactive-machines/shutter/shutter-ros2/-/blob/real_robot/REAL_ROBOT.md?ref_type=heads).
 
