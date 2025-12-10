@@ -75,26 +75,17 @@ class LineupNode(Node):
         # find most out-of-line person
         diffs = [abs(z - 1) for z in person_depths]
 
-        # if self.switchTarget:
-        #     self.target_idx = int(np.argmax(diffs))
-        #     self.switchTarget = False
-        # elif self.target_idx == -1 or self.target_idx >= num_people:
-        #     return
         
         # Always set target to furthest
         self.target_idx = np.argmax(diffs)
 
-        # offset = diffs[self.target_idx]
-        # max_offset = max(diffs)
+
         max_offset = diffs[self.target_idx]
 
         self.get_logger().info(
             f"curreny idx={self.target_idx}, depth = {person_depths[self.target_idx]}, offset={max_offset:.2f} m"
         )
 
-        # self.get_logger().info(
-        #     f"curreny idx={self.target_idx}, depth = {person_depths[self.target_idx]}, offset={offset:.2f} m"
-        # )
 
         if max_offset > FOOT_IN_METERS:
             direction = "forward" if person_depths[self.target_idx] > 1 else "back"
