@@ -18,6 +18,10 @@ relative position in a group of people, our robot will be able to
 call out specific individuals in a larger group and personalize its
 interactions.
 
+The goal we set for our robot is to align everyone in a line, 1.5
+meters away from the camera. The Robot will talk to the individuals
+one by one and give them instructions until it reaches its goal.
+
 HOW TO RUN THE CODE:
 
 In order to run the code, you must run several nodes, one after another. Please follow these directions in order:
