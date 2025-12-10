@@ -32,13 +32,17 @@ one by one and give them instructions until it reaches its goal.
 
 ## Running the Code
 
-First, we recommend setting up a virtual environment in your ROS directory. Please refer to [this repo](https://github.com/Yale-BIM/f25-assignments/blob/master/SETUP0_ROSWorkspace.md) to set up your ROS repository. 
+First, you must install ROS2 and set up your ROS Workspace. Please refer to [this repo](https://github.com/Yale-BIM/f25-assignments/blob/master/SETUP0_ROSWorkspace.md) to set up your ROS repository. Additionally, we recommend setting up a virtual environment in your ROS directory. 
 
 Please also ensure you have installed and set up Shutter, the Robot Photographer. Instructions for setting up Shutter can be found in [this repo](https://gitlab.com/interactive-machines/shutter/shutter-ros2/-/blob/real_robot/REAL_ROBOT.md?ref_type=heads).
 
 Next, ensure you have set up a Gemini API key and Amazon Polly account. Instructions to set up your Gemini API key can be found [here](https://ai.google.dev/gemini-api/docs/api-key), and instructions to set up Amazon Polly can be found [here](https://aws.amazon.com/pm/polly/?trk=5eaa77bb-c289-4641-9e1c-98f3f9179bcc&sc_channel=ps&s_kwcid=AL!4422!10!71331071887391!!!!71331599959072!!483456648!1141294741007044&ef_id=fe51437db0b813464f582a446e0cc6d5:G:s).
 
+Finally, install Python dependencies with:
 
+```
+pip install numpy opencv-python google-generativeai boto3 playsound
+```
 In order to run the code, you must run several nodes, one after another. Please follow these directions in order:
 1) ros2 launch azure_kinect_ros_driver driver.launch.py body_tracking_enabled:=true
 2) ros2 launch shutter_bringup shutter_with_face.launch.py
