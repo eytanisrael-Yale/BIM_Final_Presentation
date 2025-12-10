@@ -1,3 +1,5 @@
+**Background**
+
 Robots are increasingly present in social and group settings, from
 photo assistants to event helpers. In many cases, the usefulness
 and acceptance of a robot in a group social setting depends on
@@ -22,7 +24,7 @@ The goal we set for our robot is to align everyone in a line, 1.5
 meters away from the camera. The Robot will talk to the individuals
 one by one and give them instructions until it reaches its goal.
 
-HOW TO RUN THE CODE:
+**Running the Code**
 
 In order to run the code, you must run several nodes, one after another. Please follow these directions in order:
 1) ros2 launch azure_kinect_ros_driver driver.launch.py body_tracking_enabled:=true
@@ -33,3 +35,9 @@ In order to run the code, you must run several nodes, one after another. Please 
 Then, once these four are running, launch the following as many times as you want. Running it will make a full process run. If you want to run it again, simply click command/control C, and rerun the command
 
 5) ros2 run shutter_lineup control
+
+
+**Group Contributions**
+Sivan Almogy: Wrote code to create the bounding boxes and cropping from the original images, ran tests to determine in which format the LLMs responses are more accurate, and equally contributed in gathering the dataset and prompt engineering.
+Eytan Israel: Wrote code to generate descriptions based on the three prompts, and ran tests to grade the prompts with a judge LLM. Computed the mean to determine the best prompt, and equally contributed in gathering the dataset and prompt engineering.
+Elizabeth Stanish: Wrote plan and did research to scope out the next steps in using the Kinect sensors, ROS modules, and physical robot. Conducted literature review, wrote introduction, and equally contributed in gathering the dataset and prompt engineering
